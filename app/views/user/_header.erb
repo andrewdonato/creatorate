@@ -8,10 +8,16 @@
     </div>
   </div>
 <% else %>
-  <a href="/signout">
-    <p>signout</p>
-  </a>
-  <a href="/users/:<%=current_user.id%>">
-    <p>user personal page</p>
-  </a>
+  <div class="float-tastic">
+    <div class="float-left">
+      <a href="/users/:<%=current_user.id%>">
+        <p>user personal page</p>
+      </a>
+    </div>
+    <div class="float-right">
+      <a href="/signout">
+        <p>signout</p>
+      </a>
+    </div>
+  </div>
 <% end %>
