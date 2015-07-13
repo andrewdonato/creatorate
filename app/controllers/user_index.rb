@@ -8,11 +8,16 @@ get '/' do
   # end
 end
 
+post '/sessions' do
+  login
+  redirect '/'
+end
+
+
 get '/signout' do
   logout
   redirect '/'
 end
-
 ############ index ############
 get "/users" do
 end

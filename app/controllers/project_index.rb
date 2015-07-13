@@ -4,6 +4,7 @@ end
 
 ############ new ############
 get "/projects/new" do
+  "hey you're finally here"
 end
 
 ############ create ############

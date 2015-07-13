@@ -1,0 +1,15 @@
+<div class='login-container'>
+
+  <% if @login_error %>
+    <div class="errors">
+      <p style="color: red; font-weight: bold;" >You don't belong here</p>
+    </div>
+  <% end %>
+
+  <form method="post" action="/sessions">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="login">
+  </form>
+
+</div>

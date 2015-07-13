@@ -13,7 +13,9 @@ helpers do
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
     else
+      p '@' * 90
       p 'login failed'
+      p '@' * 90
     end
   end
 
