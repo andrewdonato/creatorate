@@ -1,0 +1,17 @@
+<% if !current_user %>
+  <div class="float-tastic">
+    <div class="float-left">
+      <%= erb :"user/_login" %>
+    </div>
+    <div class="float-right">
+      <%= erb :"user/_signup" %>
+    </div>
+  </div>
+<% else %>
+  <a href="/signout">
+    <p>signout</p>
+  </a>
+  <a href="/users/:<%=current_user.id%>">
+    <p>user personal page</p>
+  </a>
+<% end %>

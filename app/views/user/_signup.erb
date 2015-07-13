@@ -1,0 +1,25 @@
+<div class='signup-container'>
+
+  <% if @user %>
+    <div class="errors">
+      <% @user.errors.full_messages.each do |error|%>
+        <p style="color: red; font-weight: bold;" ><%=error%></p>
+      <%end%>
+    </div>
+  <% end %>
+
+  <form method="post" action="/users">
+
+    <input class="input" type="text" name="name" placeholder="username">
+
+    <input class="input" type="text" name="email" placeholder="email">
+
+    <input type="password" name="password" placeholder="password">
+
+    <!-- <input type="password" name="verify_password" placeholder="verify password"> -->
+
+    <input type="submit" value="Signup">
+
+  </form>
+
+</div>
