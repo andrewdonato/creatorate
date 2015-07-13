@@ -1,0 +1,7 @@
+<% if @projects %>
+  <% @projects.each do |project| %>
+    <div>
+      <a href="projects/<%= project.id %>" ><%= project.name %></a>
+    </div>
+  <% end %>
+<% end %>

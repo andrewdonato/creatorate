@@ -1,4 +1,5 @@
 get '/' do
+  @projects = Project.all
   erb :home
   # if current_user
   #   erb :home
@@ -24,7 +25,6 @@ end
 
 ############ new ############
 get "/users/new" do
-
 end
 
 ############ create ############
