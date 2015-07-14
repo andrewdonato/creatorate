@@ -1,3 +1,6 @@
 class ProjectSkill < ActiveRecord::Base
-  # Remember to create a migration!
+
+  belongs_to :project
+  belongs_to :skill
+
 end
