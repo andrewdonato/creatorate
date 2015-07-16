@@ -1,7 +1,10 @@
-<% if @projects %>
-  <% @projects.each do |project| %>
-    <div>
-      <a href="projects/<%= project.id %>" ><%= project.name %></a>
-    </div>
+<div class='project_index'>
+  <% if @projects %>
+    <% @projects.each do |project| %>
+      <div>
+        <a href="projects/<%= project.id %>" ><%= project.name %></a>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+

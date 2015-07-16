@@ -1,16 +1,19 @@
-<div>Rendering Home</div>
 
 
 
-<div>
-  <h2>Imagine something beautiful</h2>
-</div>
+  <div>
+    <h2>Imagine something beautiful</h2>
+  </div>
 
+  <div>
+    <%= erb :"project/_create_project_button" %>
+  </div>
 
-<div>
-  <%= erb :"project/_create_project_button" %>
-</div>
+  <div class="hidden_project_form">
+    <%= erb :"project/_project_new" %>
+  </div>
 
-<div>
-  <%= erb :"project/_project_index" %>
-</div>
+  <div class="project_index">
+    <%= erb :"project/_project_index" %>
+  </div>
+

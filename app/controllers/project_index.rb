@@ -1,5 +1,7 @@
 ############ index ############
 get "/projects" do
+  @projects = Project.all
+  erb :"project/_project_index"
 end
 
 ############ new ############
@@ -10,14 +12,18 @@ end
 
 ############ create ############
 post "/projects" do
+  @projects = Project.all
   @project = Project.new(creator_id: current_user.id, name: params[:name],
     timeframe: params[:timeframe],
     finances: params[:finances],
     description: params[:description],
-    needs: params[:needs],
+    needs: params[:needs]
   )
+  p "*" * 100
+  p params
+  p "*" * 100
   if @project.save
-    redirect '/'
+    (erb :"project/_project_index", layout: false).to_json
   else
     p '%' * 50
     p "did not save"
