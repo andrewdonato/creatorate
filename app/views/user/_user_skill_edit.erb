@@ -1,0 +1,7 @@
+<div id='<%= current_user.id %>'>
+  <h3>What skills do you want to work on?</h3>
+  <form id='skills_edit_form' class='users_skills_edit' method='post' action='/users/<%= current_user.id %>'>
+    <br><input type='text' name='skills_paragraph' placeholder='skills'>
+    <br><input type='submit' value='search skills' >
+  </form>
+</div>

@@ -6,6 +6,7 @@ end
 
 ############ new ############
 get "/projects/new" do
+  p 'does this route "/projects/new" ever get used anymore now that we AJAX? '
   @user = current_user
   erb :"project/_project_new"
 end
