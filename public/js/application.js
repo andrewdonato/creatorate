@@ -33,6 +33,7 @@ $(document).ready(function() {
         // $('div.project_index').children().last().append("<p>Pineapple</p>")
         // $('div.project_index').children().last().append("<a href='projects/<%= project.id %>' ><%= project.name %></a>")
         $('div.project_index').children().last().append('<div> <a href="projects/'+serverData.id + '">'+ serverData.name+ '</a> </div>')
+        $('.hidden_project_form').toggle();
         $('.create_project_form')[0].reset();
         // $('.hidden_project_form').toggle();
       })

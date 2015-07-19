@@ -23,8 +23,8 @@ post "/projects" do
   p params
   p "*" * 100
   if @project.save
-    # (erb :"project/_project_index", layout: false).to_json
-    # (erb :"_listing", layout: false, locals: {project: @project }).to_json
+    # (erb :"project/_project_index", layout: false).to_json  ## this is what I had before, it was going to be the whole list being reappended, not the best idea because it can be a lot of data.
+    # (erb :"_listing", layout: false, locals: {project: @project }).to_json  ## this is an alternative way of rendering each listing in the index.
     (@project).to_json
   else
     p '%' * 50
