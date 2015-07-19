@@ -15,6 +15,9 @@
   display: flex;
 }
 
+.hidden_project_form {
+  display: none;
+}
 /*div  {
   background-color: skyblue;
 }
