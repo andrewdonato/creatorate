@@ -44,6 +44,9 @@ end
 
 ############ update ############
 put "/users/:id" do
+  skill_array = params[:skills_paragraph]
+  p skill_array
+
 end
 
 ############ destroy ############

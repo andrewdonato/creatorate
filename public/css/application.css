@@ -15,8 +15,12 @@
   display: flex;
 }
 
-.hidden_project_form {
+.hidden {
   display: none;
+}
+
+.show {
+  display: block;
 }
 /*div  {
   background-color: skyblue;

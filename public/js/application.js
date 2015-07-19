@@ -8,6 +8,7 @@ $(document).ready(function() {
     $('.create_project_button').on('click', function(event){
       event.preventDefault();
       $('.hidden_project_form').toggle();
+      $('.collaborate_button').toggle();
       // $('.create_project_button').text('close form');
     });
   };
@@ -41,8 +42,19 @@ $(document).ready(function() {
     });
   };
 
+  var collaborateButton = function(){
+    $('.collaborate_button').on('click', function(event){
+      event.preventDefault();
+      $('.hidden_skill_form').toggle()
+      $('.create_project_button').toggle()
+    })
+  };
+
+
+
   createProjectButton();
   submitProjectForm();
+  collaborateButton();
 
 
 });
