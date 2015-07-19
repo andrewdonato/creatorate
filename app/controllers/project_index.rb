@@ -23,7 +23,9 @@ post "/projects" do
   p params
   p "*" * 100
   if @project.save
-    (erb :"project/_project_index", layout: false).to_json
+    # (erb :"project/_project_index", layout: false).to_json
+    # (erb :"_listing", layout: false, locals: {project: @project }).to_json
+    (@project).to_json
   else
     p '%' * 50
     p "did not save"
