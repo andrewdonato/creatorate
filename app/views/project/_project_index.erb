@@ -1,16 +1,11 @@
 <div class='project_index'>
   <% if @projects %>
-    <% @projects.each do |proje| %>
+    <% @projects.each do |project| %>
       <div>
-        <%= erb _listing, layout: false, locals: {project: proje} %>
-
-        <!-- <a href="projects/<%= project.id %>" ><%= project.name %></a> -->
+        <a href="projects/<%= project.id %>" ><%= project.name %></a>
       </div>
     <% end %>
   <% end %>
 </div>
 
 
-
-erb _listing
-        <a href="projects/<%= project.id %>" ><%= project.name %></a>
