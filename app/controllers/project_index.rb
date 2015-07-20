@@ -41,6 +41,13 @@ get "/projects/:id" do
   erb :"project/_project_show"
 end
 
+post "/projects/:id" do
+
+  # this is where a user becomes a collaborator on a project
+  @collaborator = Project_User.new(user_id: params[:user_id], project_id: params[:project_id])
+
+end
+
 ############ edit ############
 get "/projects/:id/edit" do
 end

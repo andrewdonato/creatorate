@@ -4,8 +4,7 @@ get '/' do
   # if current_user
   #   erb :home
   # else
-  #   p '@' * 90
-  #   p "not happy"
+  #   # erb :home
   # end
 end
 

@@ -1,4 +1,6 @@
 <div>
+  <%= erb :'project/_project_collaborate_button', layout: false, locals: {project: @project} %>
+
   <p> Creator: <%= @creator.name %></p>
   <p> Timeframe: <%= @project.timeframe %></p>
   <p> Finances: <%= @project.finances %></p>
