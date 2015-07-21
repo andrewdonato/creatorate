@@ -38,14 +38,37 @@ end
 get "/projects/:id" do
   @project = Project.find_by(id: params[:id])
   @creator = User.find_by(id: "#{@project.creator_id}")
+  @user = current_user
   erb :"project/_project_show"
 end
 
 post "/projects/:id" do
 
   # this is where a user becomes a collaborator on a project
-  @collaborator = Project_User.new(user_id: params[:user_id], project_id: params[:project_id])
+  p '*' * 80
+  p "project id: #{params[:project_id]}"
+  p "current user: #{current_user.id}"
 
+  @collaborator = ProjectUser.new(user_id: current_user.id, project_id: params[:project_id])
+
+  if @collaborator.save
+    p '@' * 50
+    p 'saved!!!!'
+    p '@' * 50
+  else
+    p '@' * 50
+    p 'Fail :('
+    p '@' * 50
+  end
+
+
+  p @collaborator
+  @user = current_user
+  p @user
+  @user.to_json
+  p @user
+
+  p '*' * 80
 end
 
 ############ edit ############
