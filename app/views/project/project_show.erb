@@ -1,0 +1,19 @@
+<div dataProjectId='<%= @project.id %>' class='project_show'>
+  <%= erb :'project_users/_project_collaborate_button', layout: false, locals: {project: @project} %>
+  <div class='project_information'>
+    <p> Creator: <%= @creator.name %> </p>
+    <p> Timeframe: <%= @project.timeframe %> </p>
+    <p> Finances: <%= @project.finances %> </p>
+    <p> Description: <%= @project.description %> </p>
+    <p> Creative needs: <%= @project.needs %> </p>
+  </div>
+
+  <div class='project_collaborators index'>
+    <h3>Current collaborators:</h3>
+    <% if @project_users %>
+      <% @project_users.each do |user| %>
+        <a href="/users/<%= user.id %>"><br><%= user.name %></a>
+      <% end %>
+    <% end %>
+  </div>
+</div>
