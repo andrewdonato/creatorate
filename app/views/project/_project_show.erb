@@ -1,9 +1,13 @@
-<div>
-  <%= erb :'project/_project_collaborate_button', layout: false, locals: {project: @project} %>
+<div dataProjectId='<%= @project.id %>' class='project_show'>
+  <%= erb :'project_users/_project_collaborate_button', layout: false, locals: {project: @project} %>
 
   <p> Creator: <%= @creator.name %></p>
   <p> Timeframe: <%= @project.timeframe %></p>
   <p> Finances: <%= @project.finances %></p>
   <p> Description: <%= @project.description %></p>
   <p> Creative needs: <%= @project.needs %></p>
+
+  <div class='project_collaborators'>
+    <h3>Current collaborators:</h3>
+  </div>
 </div>
