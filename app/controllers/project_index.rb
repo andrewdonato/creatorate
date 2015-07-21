@@ -1,7 +1,7 @@
 ############ index ############
 get "/projects" do
   @projects = Project.all
-  erb :"project/_project_index"
+  erb :"project/project_index"
 end
 
 ############ new ############
@@ -24,7 +24,7 @@ post "/projects" do
   p params
   p "*" * 100
   if @project.save
-    # (erb :"project/_project_index", layout: false).to_json  ## this is what I had before, it was going to be the whole list being reappended, not the best idea because it can be a lot of data.
+    # (erb :"project/project_index", layout: false).to_json  ## this is what I had before, it was going to be the whole list being reappended, not the best idea because it can be a lot of data.
     # (erb :"_listing", layout: false, locals: {project: @project }).to_json  ## this is an alternative way of rendering each listing in the index.
     (@project).to_json
   else
@@ -37,9 +37,23 @@ end
 ############ show ############
 get "/projects/:id" do
   @project = Project.find_by(id: params[:id])
+  # @users = Users.find
+  # select * from project_users inner join users on project_users.user_id = users.id where project_users.project_id = params[:id]
+  # @project_users = User.joins(:project_users).where(:project_id == @project.id)
+  @project_users = User.joins(:project_users).where('project_users.project_id' => @project.id)
   @creator = User.find_by(id: "#{@project.creator_id}")
   @user = current_user
-  erb :"project/_project_show"
+
+  if @project_users
+    @project_users.each do |user|
+      p '%' * 50
+      p user
+      p '%' * 50
+    end
+  end
+
+
+  erb :"project/project_show"
 end
 
 post "/projects/:id" do

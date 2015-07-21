@@ -35,6 +35,10 @@ end
 
 ############ show ############
 get "/users/:id" do
+  @user = User.find_by(id: params[:id])
+  @collaborations = Project.joins(:project_users).where('project_users.user_id' => @user.id)
+
+  erb :'user/user_show'
 end
 
 ############ edit ############

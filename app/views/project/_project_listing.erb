@@ -1,4 +1,7 @@
+<!-- this file is not being used for anything at the moment, it was going to be used as a partial on the project index, but including it did not work originally.
+I believe the fix involved passing in the instance variable from the routes into locals, and then passing in locals to the partial -->
+
 <a href="projects/<%= project.id %>" ><%= project.name %></a>
 
-<!-- The partial call we would be using to access this specific page from the _project_index.erb page -->
+<!-- The partial call we would be using to access this specific page from the project_index.erb page -->
 <%= erb :'project/_project_listing', layout: false, locals:{project: proje} %>
