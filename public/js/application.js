@@ -72,18 +72,23 @@ var projectCollaborateButton = function(){
       // dataType: "json"
     })
 
-    // request.done(function(serverData){
-    //   console.log(serverData)
-    //   console.log("request has failed")
-    // })
-    // request.fail(function(serverData){
-    //   console.log(serverData)
-    //   console.log("request has failed")
-    // })
+    request.done(function(serverData){
+      var parsedData = JSON.parse(serverData)
+      console.log('ServerData: ' + parsedData)
+      $('.project_show').prepend('You are a member!')
+      // /////////////////////////////////////
+      // $('div.project_index').children().last().append('<div> <a href="projects/'+serverData.id + '">'+ serverData.name+ '</a> </div>')
+      $('div.project_collaborators').children().last().append('<div> <a href="/users/' +parsedData["id"]+ '">' +parsedData["name"]+ '</a> <div>')
+      // $('.project_show').append('hello')
+      // /////////////////////////////////////
+      console.log("Request Success!")
+    })
+    request.fail(function(serverData){
+      console.log(serverData)
+      console.log("request has failed")
+    })
 
     // console.log('button pressed')
 
-    $('.project_show').prepend('You are a member!')
-    $('.project_show').append('hello')
   })
 };
