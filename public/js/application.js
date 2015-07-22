@@ -74,13 +74,10 @@ var projectCollaborateButton = function(){
 
     request.done(function(serverData){
       var parsedData = JSON.parse(serverData)
-      console.log('ServerData: ' + parsedData)
+      console.log('parsedData: ' + parsedData)
+      $('.project_collaborate_button').toggle();
       $('.project_show').prepend('You are a member!')
-      // /////////////////////////////////////
-      // $('div.project_index').children().last().append('<div> <a href="projects/'+serverData.id + '">'+ serverData.name+ '</a> </div>')
       $('div.project_collaborators').children().last().append('<div> <a href="/users/' +parsedData["id"]+ '">' +parsedData["name"]+ '</a> <div>')
-      // $('.project_show').append('hello')
-      // /////////////////////////////////////
       console.log("Request Success!")
     })
     request.fail(function(serverData){
