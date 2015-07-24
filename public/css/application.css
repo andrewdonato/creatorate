@@ -1,3 +1,17 @@
+/* box-sizing fix */
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 .input {
   display: inline-block;
 }
@@ -22,7 +36,24 @@
 .show {
   display: block;
 }
-/*div  {
+/*
+* {
+    border-style: solid;
+    border-width: 1px;
+}
+*/
+.project_index {
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*
+div  {
   background-color: skyblue;
+}
+*/
+/*
+.pos-f {
+    position: fixed;
 }
 */
