@@ -12,14 +12,14 @@ $(document).ready(function() {
 
 });
 
-  var createProjectButton = function(){
-    $('.create_project_button').on('click', function(event){
-      event.preventDefault();
-      $('.hidden_project_form').toggle();
-      $('.collaborate_button').toggle();
-      // $('.create_project_button').text('close form');
-    });
-  };
+var createProjectButton = function(){
+  $('.create_project_button').on('click', function(event){
+    event.preventDefault();
+    $('.hidden_project_form').toggle();
+    $('.collaborate_button').toggle();
+    // $('.create_project_button').text('close form');
+  });
+};
 
 var submitProjectForm = function(){
   $('.hidden_project_form').on('submit', '.create_project_form', function(event){
